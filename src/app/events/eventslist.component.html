@@ -1,6 +1,11 @@
 <h2>List of Events</h2>
+<span class="fr">Welcome,{{visitorName}}</span>
+<br>
 <hr>
-<button (click)="toogleRegCount()">
+Enter Your Name :
+<input type="text" [(ngModel)]="visitorName" />
+<br>
+<button (click)="toogleRegCount()" class="fr">
  {{showRegCount ? 'Hide' : 'Show'}}	Registration Count
 </button>
 <div class="events-text">

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   	.events-text {font-family: Georgia;font-size: 15pt;}
   	.event-logo {height: 50px;width: 50px;margin-bottom: -18px;}
   	.regSoFar {color:#f0ab00}
+  	.fr {float:right}
   `] 
 })
 
@@ -21,6 +22,7 @@ export class EventsListComponent {
 		totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1)
 	};
 	showRegCount:Boolean = false;
+	visitorName: string;
 
 	toogleRegCount():void
 	{
