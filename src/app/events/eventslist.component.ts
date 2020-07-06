@@ -19,5 +19,11 @@ export class EventsListComponent {
 		name:"Event X",
 		date:"12-Dec-2002",
 		totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1)
+	};
+	showRegCount:Boolean = false;
+
+	toogleRegCount():void
+	{
+		this.showRegCount = !this.showRegCount;
 	}
 }
