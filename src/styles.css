@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body
+{
+	background-color: black;
+	color: white;
+}
+hr
+{
+	border: solid #f0ab00 2px;
+}
