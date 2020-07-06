@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'events-list',
-  templateUrl:'./eventslist.component.html' 
+  templateUrl:'./eventslist.component.html',
+  styles:[`
+  	.ml10 {margin-left:10px;}
+  	.events-text {font-family: Georgia;font-size: 15pt;}
+  `] 
 })
 
 
