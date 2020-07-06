@@ -15,11 +15,12 @@ import { Component } from '@angular/core';
 
 export class EventsListComponent {
 	eventLogoImgUrl: string = '/assets/images/event-logo.png';
-	eventXXXX = {
+	event = {
 		srno:1,
 		name:"Event X",
 		date:"12-Dec-2002",
-		totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1)
+		totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
+		mode:"Online"
 	};
 	showRegCount:Boolean = false;
 	visitorName: string;
