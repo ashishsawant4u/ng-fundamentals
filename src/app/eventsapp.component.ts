@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'events-app',
-  template: '<h2>ng with HYBRIS</h2>'
+  template: '<events-list></events-list>'
 })
 
 
