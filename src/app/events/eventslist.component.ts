@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
 
 export class EventsListComponent {
 	eventLogoImgUrl: string = '/assets/images/event-logo.png';
-	event = {
+	eventXXXX = {
 		srno:1,
 		name:"Event X",
 		date:"12-Dec-2002",
