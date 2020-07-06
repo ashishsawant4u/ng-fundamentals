@@ -1,6 +1,9 @@
 <h2>List of Events</h2>
 <hr>
 <div class="events-text">
+	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
 	<span class="ml10"><b>{{event.name}} </b> on </span>
 	<span class="ml10">{{event.date}}</span>
+	<span class="ml10 regSoFar">registration done so far</span>
+	<span class="ml10 regSoFar" [innerText]="event.totalRegistrationSoFar"></span>
 </div>
