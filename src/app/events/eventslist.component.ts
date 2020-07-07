@@ -29,4 +29,9 @@ export class EventsListComponent {
 	{
 		this.showRegCount = !this.showRegCount;
 	}
+
+	eventModeClickEventListener(eventModeDetails : string):void
+	{
+		alert(eventModeDetails);
+	}
 }

@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'event-mode',
@@ -10,4 +10,18 @@ import { Component,Input } from '@angular/core';
 
 export class EventModeComponent {
 	@Input() eventMode:string;
+	@Output() eventModeClickEvent: EventEmitter<string> = new EventEmitter<string>();
+
+
+	handleEventModeClickEvent(): void
+	{
+		if(this.eventMode === "Online")
+		{
+			this.eventModeClickEvent.emit("Event will be conducted at https://cx.sap.com");
+		}	
+		if(this.eventMode === "Offline")
+		{
+			this.eventModeClickEvent.emit("Event will be conducted at 14 avenue park,Aukland,NZ");
+		}	
+	}
 }

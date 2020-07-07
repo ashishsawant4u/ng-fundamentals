@@ -17,6 +17,7 @@ Enter Your Name :
 	<span class="ml10 regSoFar" [innerText]="event.totalRegistrationSoFar"></span>
 	</span>
 	<span class="ml10">
-		<event-mode [eventMode]="event.mode"></event-mode>
+		<event-mode [eventMode]="event.mode" (eventModeClickEvent)="eventModeClickEventListener($event)">
+		</event-mode>
 	</span>
 </div>
