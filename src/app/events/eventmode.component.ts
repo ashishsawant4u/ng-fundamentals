@@ -11,7 +11,7 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
 export class EventModeComponent {
 	@Input() eventMode:string;
 	@Output() eventModeClickEvent: EventEmitter<string> = new EventEmitter<string>();
-
+	eventModeDetails1:string = "eventModeDetails1 accessed by parent component using template variable";
 
 	handleEventModeClickEvent(): void
 	{
