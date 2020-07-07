@@ -24,4 +24,9 @@ export class EventModeComponent {
 			this.eventModeClickEvent.emit("Event will be conducted at 14 avenue park,Aukland,NZ");
 		}	
 	}
+
+	eventModeDetails2(): void
+	{
+		alert("method eventModeDetails2 called from parent component using template variable");
+	} 
 }
