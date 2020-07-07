@@ -27,6 +27,6 @@ export class EventModeComponent {
 
 	eventModeDetails2(): void
 	{
-		alert("method eventModeDetails2 called from parent component using template variable");
+		alert("method eventModeDetails2 called from parent component using template method");
 	} 
 }

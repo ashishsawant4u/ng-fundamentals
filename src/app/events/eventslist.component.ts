@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
   	.ml10 {margin-left:10px;}
   	.events-text {font-family: Georgia;font-size: 15pt;}
   	.event-logo {height: 50px;width: 50px;margin-bottom: -18px;}
-  	.regSoFar {color:#f0ab00}
+  	.y-color {color:#f0ab00}
   	.fr {float:right}
+  	.break {display:block;}
+  	.event-section{background-color:#3b3a3a;padding:15px;margin: 10px;}
   `] 
 })
 

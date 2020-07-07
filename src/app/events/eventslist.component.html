@@ -1,28 +1,40 @@
 <h2>List of Events</h2>
 <span class="fr">Welcome,{{visitorName}}</span>
-<br>
-<hr>
-Enter Your Name :
+<span class="ml10 y-color">Enter Your Name :</span>
 <input type="text" [(ngModel)]="visitorName" />
 <br>
-<button (click)="toogleRegCount()" class="fr">
- {{showRegCount ? 'Hide' : 'Show'}}	Registration Count
-</button>
-<div class="events-text">
+<hr>
+<div class="events-text event-section">
+	<button (click)="toogleRegCount()" class="fr">
+	 	{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
+	</button>
 	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
-	<span class="ml10"><b>{{event?.name}} </b> on </span>
-	<span class="ml10">{{event?.date}}</span>
+	<span class="ml10"><b>{{event?.name}} </b></span>
 	<span *ngIf="showRegCount">
-	<span class="ml10 regSoFar">registration done so far</span>
-	<span class="ml10 regSoFar" [innerText]="event.totalRegistrationSoFar"></span>
+		<span class="ml10 y-color">registration done so far</span>
+		<span class="ml10 y-color" [innerText]="event.totalRegistrationSoFar"></span>
 	</span>
-	<span class="ml10">
+
+	<br><br>
+
+	<span class="ml10 y-color">Date :</span>
+	<span class="ml10">{{event?.date}}</span>
+
+	<br><br>
+
+	<span class="ml10 y-color">Mode :</span>
+	<span class="ml10 ">
 		<event-mode [eventMode]="event.mode" (eventModeClickEvent)="eventModeClickEventListener($event)"
 			#eventModeRef>
 		</event-mode>
 	</span>
-	<span class="ml10 regSoFar">Details 1 :</span>
+
+	<br><br>
+
+	<span class="ml10 y-color ">Details 1 :</span>
 	<span class="ml10">{{eventModeRef.eventModeDetails1}}</span>
-	<br>
+
+	<br><br>
+
 	<button (click)="eventModeRef.eventModeDetails2()">Get Event Detail 2</button>
 </div>
