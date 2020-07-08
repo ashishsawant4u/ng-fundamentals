@@ -4,7 +4,8 @@
 <input type="text" [(ngModel)]="visitorName" />
 <br>
 <hr>
-<div class="events-text event-section">
+<div class="events-text event-section" *ngIf="events && events.length">
+	<div *ngFor="let event of events">
 	<button (click)="toogleRegCount()" class="fr">
 	 	{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
 	</button>
@@ -37,4 +38,5 @@
 	<br><br>
 
 	<button (click)="eventModeRef.eventModeDetails2()">Get Event Detail 2</button>
+	</div>
 </div>

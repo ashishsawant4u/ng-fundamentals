@@ -17,13 +17,24 @@ import { Component } from '@angular/core';
 
 export class EventsListComponent {
 	eventLogoImgUrl: string = '/assets/images/event-logo.png';
-	event = {
-		srno:1,
-		name:"Event X",
-		date:"12-Dec-2002",
-		totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
-		mode:"Online"
-	};
+	events : any[] = [
+		{
+			srno:1,
+			name:"Event IPL",
+			date:"12-Dec-2020",
+			totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
+			mode:"Online",
+			ticketPrice:1200
+		},
+		{
+			srno:2,
+			name:"Event WC-T20",
+			date:"12-Mar-2021",
+			totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
+			mode:"Offline",
+			ticketPrice:1200
+		}
+ 	];
 	showRegCount:Boolean = false;
 	visitorName: string;
 
