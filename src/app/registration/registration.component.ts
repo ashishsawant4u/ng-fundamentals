@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistrationForm } from './registrationform';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
     selector:"registration-form",
@@ -28,4 +28,10 @@ export class RegistrationComponent
     {
         console.log("Is Form valid "+registrationForm.valid);
     }
+
+    validateMobileNumber(mobileNumber : NgModel):void
+    {
+        console.log("Mobile Number "+mobileNumber.value);
+    }
+
 }

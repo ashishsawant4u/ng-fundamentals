@@ -16,7 +16,8 @@
 
     <div>
         <span class="form-lable">Mobile Number : </span>
-        <input type="text" name="mobileNumber" [(ngModel)]="registrationForm.mobileNumber" minlength="10" maxlength="15" />
+        <input type="text" name="mobileNumber" [(ngModel)]="registrationForm.mobileNumber" minlength="10" maxlength="15" 
+            #mobFieldNgModel="ngModel" (blur)="validateMobileNumber(mobFieldNgModel)"/>
     </div>
 
     <span class="form-lable">Gender : </span>
