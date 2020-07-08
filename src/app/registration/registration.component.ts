@@ -15,6 +15,8 @@ export class RegistrationComponent
     standsList:  string[] = ["Front Stands","Middle Stands","Back Stands","VIP Box"];
     registrationForm: RegistrationForm = {
             name:"",
+            age:null,
+            mobileNumber:null,
             gender:"",
             stands:"",
             termsAndconditions:false,

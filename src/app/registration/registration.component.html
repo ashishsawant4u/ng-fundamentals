@@ -1,8 +1,18 @@
-<form #formRef="ngForm">
+<form #formRef="ngForm" ngNativeValidate>
 
     <div>
         <span class="form-lable">Name : </span>
-        <input type="text" name="name" [(ngModel)]="registrationForm.name" />
+        <input type="text" name="name" [(ngModel)]="registrationForm.name" required/>
+    </div>
+
+    <div>
+        <span class="form-lable">Age : </span>
+        <input type="number" name="age" [(ngModel)]="registrationForm.age" min="12" max="60" required/>
+    </div>
+
+    <div>
+        <span class="form-lable">Mobile Number : </span>
+        <input type="text" name="mobileNumber" [(ngModel)]="registrationForm.mobileNumber" minlength="10" maxlength="15" />
     </div>
 
     <span class="form-lable">Gender : </span>
@@ -20,6 +30,10 @@
     <div>
         <input type="checkbox" name="termsAndconditions" [(ngModel)]="registrationForm.termsAndconditions" >
         <span class="form-lable">Accept Terms & Conditions</span>
+    </div>
+
+    <div>
+        <button type="submit">Register</button>
     </div>
 
 </form> 
