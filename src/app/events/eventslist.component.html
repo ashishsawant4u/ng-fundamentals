@@ -9,7 +9,7 @@
 	 	{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
 	</button>
 	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
-	<span class="ml10"><b>{{event?.name}} </b></span>
+	<span class="ml10"><b>{{event?.name | uppercase }} </b></span>
 	<span *ngIf="showRegCount">
 		<span class="ml10 y-color">registration done so far</span>
 		<span class="ml10 y-color" [innerText]="event.totalRegistrationSoFar"></span>
@@ -18,7 +18,7 @@
 	<br><br>
 
 	<span class="ml10 y-color">Date :</span>
-	<span class="ml10">{{event?.date}}</span>
+	<span class="ml10">{{event?.date |  date:"EEEE, MMMM d, y" }}</span>
 
 	<br><br>
 
