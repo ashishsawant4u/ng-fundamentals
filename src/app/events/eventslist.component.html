@@ -5,10 +5,11 @@
 <br>
 <hr>
 <div *ngIf="events && events.length">
-	<div *ngFor="let event of events" class="events-text event-section">
 	<button (click)="toogleRegCount()" class="fr">
-	 	{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
+		{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
 	</button>
+	<br>
+	<div *ngFor="let event of events" class="events-text event-section">
 	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
 	<span class="ml10"><b>{{event?.name | uppercase }} </b></span>
 	<span *ngIf="showRegCount">
