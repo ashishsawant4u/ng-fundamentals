@@ -37,6 +37,8 @@ export class EventsListComponent {
  	];
 	showRegCount:Boolean = false;
 	visitorName: string;
+	filterByText:string;
+	filteredEvents:any[] = this.events;
 
 	toogleRegCount():void
 	{
@@ -46,5 +48,20 @@ export class EventsListComponent {
 	eventModeClickEventListener(eventModeDetails : string):void
 	{
 		alert(eventModeDetails);
+	}
+
+	filterEvents(): void
+	{
+		if(this.filterByText)
+		{
+			this.filteredEvents = this.events.filter((event:any) =>
+				event.name.toLowerCase().indexOf(this.filterByText) !== -1		
+			)
+		}
+		else
+		{
+			this.filteredEvents = this.events;
+		}
+		
 	}
 }

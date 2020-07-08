@@ -4,12 +4,16 @@
 <input type="text" [(ngModel)]="visitorName" />
 <br>
 <hr>
-<div *ngIf="events && events.length">
+<span class="ml10 y-color">Search Event</span>
+	<span class="ml10">
+		<input type="text" [(ngModel)]="filterByText" (keyup)="filterEvents();">
+</span>
+<div *ngIf="filteredEvents && filteredEvents.length">
 	<button (click)="toogleRegCount()" class="fr">
 		{{showRegCount ? 'Hide' : 'Show'}}	Registration Count
 	</button>
 	<br>
-	<div *ngFor="let event of events" class="events-text event-section">
+	<div *ngFor="let event of filteredEvents" class="events-text event-section">
 	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
 	<span class="ml10"><b>{{event?.name | uppercase }} </b></span>
 	<span *ngIf="showRegCount">
