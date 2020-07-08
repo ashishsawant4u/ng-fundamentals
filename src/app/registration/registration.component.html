@@ -1,0 +1,27 @@
+<form #formRef="ngForm">
+
+    <div>
+        <span class="form-lable">Name : </span>
+        <input type="text" name="name" [(ngModel)]="registrationForm.name" />
+    </div>
+
+    <span class="form-lable">Gender : </span>
+    <div *ngFor="let gender of genderList">
+        <input type="radio" name="gender" value="{{gender}}" [(ngModel)]="registrationForm.gender"> {{gender}}
+    </div>
+
+    <span class="form-lable">Select Stand : </span>
+    <div>
+        <select name="stands" [(ngModel)]="registrationForm.stands">
+            <option *ngFor="let stands of standsList" value="{{stands}}">{{stands}}</option>
+        </select>
+    </div>
+    
+    <div>
+        <input type="checkbox" name="termsAndconditions" [(ngModel)]="registrationForm.termsAndconditions" >
+        <span class="form-lable">Accept Terms & Conditions</span>
+    </div>
+
+</form> 
+
+

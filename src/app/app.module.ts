@@ -6,6 +6,7 @@ import { EventsListComponent } from './events/eventslist.component';
 import { EventModeComponent } from './events/eventmode.component';
 import { FormsModule } from '@angular/forms';
 import { ReplaceStringPipe } from './Utilities/utilities.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReplaceStringPipe } from './Utilities/utilities.component';
     EventsAppComponent,
     EventsListComponent,
     EventModeComponent,
-    ReplaceStringPipe
+    ReplaceStringPipe,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
