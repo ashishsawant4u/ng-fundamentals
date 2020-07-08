@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistrationForm } from './registrationform';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector:"registration-form",
@@ -7,7 +8,7 @@ import { RegistrationForm } from './registrationform';
     styles:[`
         .form-lable {color:#f0ab00}
         form {font-family: Georgia;font-size: 15pt;}
-        .ng-invalid:not(form).ng-touched {border:solid red 5px;}
+        .field-error {border:solid red 5px;}
     `]   
 })
 export class RegistrationComponent
@@ -22,4 +23,9 @@ export class RegistrationComponent
             stands:"",
             termsAndconditions:false,
     };
+
+    postRegistartionForm(registrationForm : NgForm):void
+    {
+        console.log("Is Form valid "+registrationForm.valid);
+    }
 }
