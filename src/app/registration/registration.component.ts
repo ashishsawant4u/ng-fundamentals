@@ -7,6 +7,7 @@ import { RegistrationForm } from './registrationform';
     styles:[`
         .form-lable {color:#f0ab00}
         form {font-family: Georgia;font-size: 15pt;}
+        .ng-invalid:not(form).ng-touched {border:solid red 5px;}
     `]   
 })
 export class RegistrationComponent

@@ -2,12 +2,14 @@
 
     <div>
         <span class="form-lable">Name : </span>
-        <input type="text" name="name" [(ngModel)]="registrationForm.name" required/>
+        <input type="text" name="name" [(ngModel)]="registrationForm.name" required #nameFieldNgModel="ngModel"/>
+        <span [hidden]="nameFieldNgModel.valid || nameFieldNgModel.untouched">Please enter name</span>
     </div>
 
     <div>
         <span class="form-lable">Age : </span>
-        <input type="number" name="age" [(ngModel)]="registrationForm.age" min="12" max="60" required/>
+        <input type="number" name="age" [(ngModel)]="registrationForm.age" min="12" max="60" required #ageFieldNgModel="ngModel"/>
+        <span [hidden]="ageFieldNgModel.valid || ageFieldNgModel.untouched">Please enter valid age</span>
     </div>
 
     <div>
