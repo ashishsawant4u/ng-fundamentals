@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from './events.service';
-import { ConsoleReporter } from 'jasmine';
+import { EventBillingService } from './eventbilling.service';
 
 @Component({
   selector: 'events-list',
@@ -13,7 +13,12 @@ import { ConsoleReporter } from 'jasmine';
   	.fr {float:right}
   	.break {display:block;}
   	.event-section{background-color:#3b3a3a;padding:15px;margin: 10px;}
-  `] 
+	.mt20 {margin-top: 20px;}
+	  `],
+  providers:[
+	EventBillingService
+  ] 
+  
 })
 
 
@@ -22,10 +27,13 @@ export class EventsListComponent implements OnInit{
 	eventLogoImgUrl: string = '/assets/images/event-logo.png';
 	events : any[];
 	eventsService : EventsService;
+	eventBillingService : EventBillingService;
+	eventBasicFees : any;
 
-	constructor(evetsService : EventsService)
+	constructor(evetsService : EventsService,eventBillingService : EventBillingService)
 	{
 		this.eventsService = evetsService;
+		this.eventBillingService = eventBillingService;
 	}
 
 	showRegCount:Boolean = false;
@@ -64,5 +72,9 @@ export class EventsListComponent implements OnInit{
 		
 	}
 
+	getBasicEventFees(eventName : string)
+	{
+		this.eventBasicFees =  this.eventBillingService.getEventFees(eventName);
+	}
 	
 }
