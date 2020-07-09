@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EventsService } from './events.service';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'events-list',
@@ -15,30 +17,27 @@ import { Component } from '@angular/core';
 })
 
 
-export class EventsListComponent {
+export class EventsListComponent implements OnInit{
+	
 	eventLogoImgUrl: string = '/assets/images/event-logo.png';
-	events : any[] = [
-		{
-			srno:1,
-			name:"Event IPL",
-			date:"12-Dec-2020",
-			totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
-			mode:"Online",
-			ticketPrice:1200
-		},
-		{
-			srno:2,
-			name:"Event WC-T20",
-			date:"12-Mar-2021",
-			totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
-			mode:"Offline",
-			ticketPrice:1200
-		}
- 	];
+	events : any[];
+	eventsService : EventsService;
+
+	constructor(evetsService : EventsService)
+	{
+		this.eventsService = evetsService;
+	}
+
 	showRegCount:Boolean = false;
 	visitorName: string;
 	filterByText:string;
 	filteredEvents:any[] = this.events;
+
+
+	ngOnInit(): void {
+		this.events = this.eventsService.getAllEvents();
+		this.filteredEvents = this.events;
+	}
 
 	toogleRegCount():void
 	{
@@ -64,4 +63,6 @@ export class EventsListComponent {
 		}
 		
 	}
+
+	
 }
