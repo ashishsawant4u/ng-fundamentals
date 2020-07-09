@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RegisterationService } from './registration.service';
+import { RegisterationService } from '../registration/registration.service';
 
 @Injectable({
     providedIn:"root"

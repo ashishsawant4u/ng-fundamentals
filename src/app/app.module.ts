@@ -7,7 +7,7 @@ import { EventModeComponent } from './events/eventmode.component';
 import { FormsModule } from '@angular/forms';
 import { ReplaceStringPipe } from './Utilities/utilities.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { RegisterationService } from './events/registration.service';
+import { RegisterationService } from './registration/registration.service';
 
 
 @NgModule({
