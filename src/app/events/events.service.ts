@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
+import { RegisterationService } from './registration.service';
 
 @Injectable({
     providedIn:"root"
 })
 export class EventsService
 {
+    registrationService : RegisterationService;
+
+    constructor(registrationService : RegisterationService)
+    {
+        this.registrationService = registrationService;
+    }
+
     getAllEvents(): any[]
     {
         console.log("service getAllEvents...");
@@ -13,7 +21,7 @@ export class EventsService
                 srno:1,
                 name:"Event IPL",
                 date:"12-Dec-2020",
-                totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
+                totalRegistrationSoFar:this.registrationService.getRegistrationCountForEvent("Event IPL"),
                 mode:"Online",
                 ticketPrice:1200
             },
@@ -21,7 +29,7 @@ export class EventsService
                 srno:2,
                 name:"Event WC-T20",
                 date:"12-Mar-2021",
-                totalRegistrationSoFar:Math.floor((Math.random() * 100) + 1),
+                totalRegistrationSoFar:this.registrationService.getRegistrationCountForEvent("Event WC-T20"),
                 mode:"Offline",
                 ticketPrice:1200
             }
