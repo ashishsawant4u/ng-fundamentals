@@ -29,6 +29,7 @@ export class EventsListComponent implements OnInit{
 	eventsService : EventsService;
 	eventBillingService : EventBillingService;
 	eventBasicFees : any;
+	errorMessage : String;
 
 	constructor(evetsService : EventsService,eventBillingService : EventBillingService)
 	{
@@ -43,8 +44,17 @@ export class EventsListComponent implements OnInit{
 
 
 	ngOnInit(): void {
-		this.events = this.eventsService.getAllEvents();
-		this.filteredEvents = this.events;
+		this.eventsService.getAllEvents()
+			.subscribe({
+				next: response =>{
+					this.events = response;
+					this.filteredEvents = this.events;
+				},
+				error: err =>{
+					console.log("Something went Worng"+err);
+					this.errorMessage = "Something went Worng";
+				}
+			});
 	}
 
 	toogleRegCount():void
