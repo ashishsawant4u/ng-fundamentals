@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ReplaceStringPipe } from './Utilities/utilities.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegisterationService } from './registration/registration.service';
+import { EventAccessGuard } from './guards/events.guard';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { RegisterationService } from './registration/registration.service';
     RouterModule.forRoot([
       {path:"events", component:EventsListComponent},
       {path:"register", component:RegistrationComponent},
-      {path:"event/:srno", component:EventDetailsComponet}
+      {path:"event/:srno", component:EventDetailsComponet,canActivate:[EventAccessGuard]}
     ])
   ],
   providers: [
