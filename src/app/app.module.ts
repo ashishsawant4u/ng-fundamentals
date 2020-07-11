@@ -7,6 +7,8 @@ import { RouterModule }  from '@angular/router';
 import { EventsAppComponent } from './eventsapp.component';
 import { EventsListComponent } from './events/eventslist.component';
 import { EventModeComponent } from './events/eventmode.component';
+import { EventDetailsComponet } from './events/eventdetails.component';
+
 import { FormsModule } from '@angular/forms';
 import { ReplaceStringPipe } from './Utilities/utilities.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -19,7 +21,8 @@ import { RegisterationService } from './registration/registration.service';
     EventsListComponent,
     EventModeComponent,
     ReplaceStringPipe,
-    RegistrationComponent
+    RegistrationComponent,
+    EventDetailsComponet
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { RegisterationService } from './registration/registration.service';
     HttpClientModule,
     RouterModule.forRoot([
       {path:"events", component:EventsListComponent},
-      {path:"register", component:RegistrationComponent}
+      {path:"register", component:RegistrationComponent},
+      {path:"event/:srno", component:EventDetailsComponet}
     ])
   ],
   providers: [

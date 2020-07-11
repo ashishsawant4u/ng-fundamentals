@@ -17,7 +17,13 @@
 	<br>
 	<div *ngFor="let event of filteredEvents" class="events-text event-section">
 	<span><img [src]='eventLogoImgUrl' class="event-logo"/></span>
-	<span class="ml10"><b>{{event?.name | uppercase }} </b></span>
+
+	<span class="ml10">
+		<a [routerLink]="['/event',event.srno]" class="y-color">
+		<b>{{event?.name | uppercase }} </b>
+		</a>
+	</span>
+
 	<button (click)="getBasicEventFees(event.name);" class="fr">
 		Get Event Entry Fees
 	</button>

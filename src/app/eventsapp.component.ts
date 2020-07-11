@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
 			<li><a [routerLink]="['/register']">Register</a></li>
 		  </ul>
 	</div>
-
+	<br><br>
 	<router-outlet></router-outlet>
   `
 })
