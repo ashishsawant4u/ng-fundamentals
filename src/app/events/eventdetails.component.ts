@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute }  from '@angular/router';
+import { ActivatedRoute, Router }  from '@angular/router';
 
 @Component({
 	templateUrl : "./eventdetails.component.html"
@@ -7,15 +7,23 @@ import { ActivatedRoute }  from '@angular/router';
 export class EventDetailsComponet implements OnInit
 {
 	activatedRouterService : ActivatedRoute;
+	routerService : Router;
 	srno : string;
 
-	constructor(activatedRouterService : ActivatedRoute)
+	constructor(activatedRouterService : ActivatedRoute,routerService : Router)
 	{
 		this.activatedRouterService = activatedRouterService;
+		this.routerService = routerService;
 	}
 
 	ngOnInit()
 	{
 		this.srno = this.activatedRouterService.snapshot.paramMap.get("srno");	
 	}
+
+	backToEventList() : void
+	{
+		this.routerService.navigate(["/events"]);
+	}
+
 }
