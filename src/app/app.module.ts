@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule }  from '@angular/router';
+
 
 import { EventsAppComponent } from './eventsapp.component';
 import { EventsListComponent } from './events/eventslist.component';
@@ -22,7 +24,11 @@ import { RegisterationService } from './registration/registration.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path:"events", component:EventsListComponent},
+      {path:"register", component:RegistrationComponent}
+    ])
   ],
   providers: [
     RegisterationService
